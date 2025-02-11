@@ -76,6 +76,19 @@ a {
 
         })
     })
+
+   let input = [...document.querySelectorAll('input')];
+
+input.forEach((element, index) => {
+    element.addEventListener('keyup', () => {
+        setTimeout(() => { // Yahan delay add kiya gaya hai
+            if (index + 1 < input.length) {
+                input[index + 1].focus();
+            }
+        }, 500); // 500ms ka delay hai, isay apni zaroorat ke mutabiq adjust kar sakte hain
+    });
+});
+ 
 </script>
 
 </html>
